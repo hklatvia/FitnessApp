@@ -14,6 +14,7 @@ class ToDoItem {
   }
 
   static ToDoItem fromMap(Map<String, dynamic> map) {
+    print(map['name']);
     return ToDoItem(id: map['id'], name: map['name']);
   }
 }

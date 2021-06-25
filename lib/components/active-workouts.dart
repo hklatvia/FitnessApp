@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/database/db.dart';
 import 'package:flutter_application_1/database/todoitem.dart';
-import 'package:flutter_application_1/screens/home.dart';
-import 'package:path/path.dart';
 
 class ActiveWorkouts extends StatefulWidget {
   @override
@@ -44,6 +42,9 @@ class _ActiveWorkoutsState extends State<ActiveWorkouts> {
           ),
           onDismissed: (DismissDirection d) {
             DB.delete(ToDoItem.table, item);
+            refresh();
+            ScaffoldMessenger.of(context)
+                .showSnackBar(SnackBar(content: Text('$item dismissed')));
           }),
     );
   }
