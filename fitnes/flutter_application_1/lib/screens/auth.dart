@@ -24,7 +24,7 @@ class _AuthorizationPageState extends State<AuthorizationPage> {
           padding: EdgeInsets.only(top: 100),
           child: Container(
               child: Align(
-                  child: Text('FunnyFat',
+                  child: Text('AirportBase',
                       style: TextStyle(
                           fontSize: 45,
                           fontWeight: FontWeight.bold,

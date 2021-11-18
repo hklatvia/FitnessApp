@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:flutter_application_1/database/todoitem.dart';
+import 'package:flutter_application_1/database/flight.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart' as p;
 
@@ -23,14 +23,26 @@ abstract class DB {
 
   static void onCreate(Database db, int version) async {
     await db.execute(
-        'Create Table todo (id Integer Primary Key Not null, name String)');
+        'Create Table todo (id Integer Primary Key Not null, flightNumber String, airlineCode String, departureCode String, arrivalCode String, departureTime String, arrivalTime String)');
   }
 
-  static Future<List<Map<String, dynamic>>> query(String table) async =>
-      await _db!.query(table);
+  static Future<List<Map<String, dynamic>>> query(String table) async {
+    List<Map<String, dynamic>> res = await _db!.query(table);
 
-  static Future<int> insert(String table, ToDoItem todo) async =>
-      await _db!.insert(table, todo.toMap());
-  static Future<int> delete(String table, ToDoItem todo) async =>
+    res.forEach((element) {
+      element.values.forEach((value) {
+        print(value.runtimeType);
+      });
+    });
+    return res;
+  }
+
+  static Future<int> insert(String table, Flight todo) async =>
+      await _db!.insert(
+        table,
+        todo.toMap(),
+        conflictAlgorithm: ConflictAlgorithm.replace,
+      );
+  static Future<int> delete(String table, Flight todo) async =>
       await _db!.delete(table, where: 'id = ?', whereArgs: [todo.id]);
 }

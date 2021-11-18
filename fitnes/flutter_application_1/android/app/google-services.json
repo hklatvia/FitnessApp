@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "61410768436",
+    "project_id": "fitness-alex-ae057",
+    "storage_bucket": "fitness-alex-ae057.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:61410768436:android:fe63bca8912015d4d83c61",
+        "android_client_info": {
+          "package_name": "com.fitness.FunnyFat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "61410768436-a7v5lqplei3d63o4brv2nmvuigiqre24.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0lIknSHS31gP0oobUQhUagyU12TQCzq8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "61410768436-a7v5lqplei3d63o4brv2nmvuigiqre24.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
